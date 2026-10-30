@@ -3,45 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Water Quest - charity: water Game</title>
+    <!-- Google Fonts: Montserrat for charity: water branding -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+    <header>
+        <h1>💧 Water Quest</h1>
+        <p>Help provide clean water! Click the yellow jerry cans before they disappear.</p>
+    </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
-
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
+    <main>
+        <!-- Setup Screen -->
+        <div id="setup-screen" class="screen">
+            <h2>Select Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="diff-btn" data-diff="easy">Easy (Goal: 10)</button>
+                <button class="diff-btn" data-diff="normal">Normal (Goal: 20)</button>
+                <button class="diff-btn" data-diff="hard">Hard (Goal: 30)</button>
+            </div>
         </div>
-    </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div id="stats-bar">
+                <div class="stat">Score: <span id="score">0</span> / <span id="target-score">20</span></div>
+                <div class="stat">Time Left: <span id="timer">30</span>s</div>
+                <div class="stat">Level: <span id="current-diff-label">Normal</span></div>
+            </div>
+            
+            <div id="message-banner">Catch the yellow jerry cans!</div>
+
+            <div id="game-board">
+                <!-- Cans spawn dynamically here -->
+            </div>
+
+            <button id="reset-btn" class="secondary-btn">Restart Game</button>
+        </div>
+
+        <!-- Game Over / Victory Screen -->
+        <div id="game-over-screen" class="screen hidden">
+            <h2 id="game-over-title">Game Over</h2>
+            <p id="game-over-message">You did great!</p>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <button id="play-again-btn" class="primary-btn">Play Again</button>
+        </div>
+    </main>
+
+    <!-- Required Footer with charity: water Links -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Water Quest | Inspired by <a href="https://www.charitywater.org" target="_blank">charity: water</a></p>
+            <div class="footer-links">
+                <a href="https://www.charitywater.org" target="_blank">Visit charity: water Website</a> | 
+                <a href="https://www.charitywater.org/donate" target="_blank">Donate for Clean Water</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
