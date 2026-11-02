@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const difficultyButtons = document.querySelectorAll('.difficulty-btn');
     const scoreDisplay = document.getElementById('score');
-    const timeDisplay = document.getElementById('timer'); // Matches your HTML ID 'timer'
-    const levelDisplay = document.getElementById('current-diff-label'); // Matches your HTML ID
-    const restartButton = document.getElementById('reset-btn'); // Matches your HTML ID 'reset-btn'
+    const timeDisplay = document.getElementById('timer');                // Matches your HTML ID 'timer'
+    const levelDisplay = document.getElementById('current-diff-label');    // Matches your HTML ID 'current-diff-label'
+    const restartButton = document.getElementById('reset-btn');            // Matches your HTML ID 'reset-btn'
     const playAgainButton = document.getElementById('play-again-btn');
-    const gameArea = document.getElementById('game-board'); // Matches your HTML ID 'game-board'
-    const gameOverScreen = document.getElementById('game-over-screen'); // Matches your HTML ID
+    const gameArea = document.getElementById('game-board');                // Matches your HTML ID 'game-board'
+    const gameOverScreen = document.getElementById('game-over-screen');    // Matches your HTML ID 'game-over-screen'
     const finalScoreDisplay = document.getElementById('final-score');
   
-
+    
     let score = 0;
     let targetScore = 20;
     let timeLeft = 30;
