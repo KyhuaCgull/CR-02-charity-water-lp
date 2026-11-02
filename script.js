@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameOverScreen = document.getElementById('game-over-screen');    // Matches your HTML ID 'game-over-screen'
     const finalScoreDisplay = document.getElementById('final-score');
   
-    
+
     let score = 0;
     let targetScore = 20;
     let timeLeft = 30;
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameActive = false;
 
     difficultyButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const goal = parseInt(e.target.dataset.goal);
-            targetScore = goal;
-            levelDisplay.textContent = e.target.textContent;
-            startGame();
-        });
+    btn.addEventListener('click', (e) => {
+        const goal = parseInt(e.target.dataset.goal);
+        targetScore = goal;
+        levelDisplay.textContent = e.target.textContent;
+        startGame();
     });
+});
 
     function startGame() {
         score = 0;
