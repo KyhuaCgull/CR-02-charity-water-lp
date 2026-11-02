@@ -66,11 +66,19 @@ h2 {
     color: var(--dark-blue);
 }
 
+.difficulty-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 .difficulty-btn {
     display: block;
     width: 100%;
     padding: 1rem;
-    margin-bottom: 1rem;
     background-color: #ffc107;
     color: #1a1a1a;
     border: none;
@@ -78,6 +86,7 @@ h2 {
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: background-color 0.2s, transform 0.1s;
 }
 
