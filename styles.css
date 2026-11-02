@@ -66,12 +66,25 @@ h2 {
     color: var(--dark-blue);
 }
 
-.difficulty-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.difficulty-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #ffc107;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
+.difficulty-btn:hover {
+    background-color: #ffb300;
+    transform: translateY(-2px);
+}
 button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
