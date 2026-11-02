@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const setupScreen = document.getElementById('setup-screen');
     const gameScreen = document.getElementById('game-screen');
 
+    let score = 0;
+    let targetScore = 20;
+    let timeLeft = 30;
+    let timer = null;
+    let spawner = null;
+    let gameActive = false;
+
     difficultyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             console.log("Difficulty clicked:", e.target.textContent);
@@ -21,15 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             startGame();
         });
     });
-});
-
-    let score = 0;
-    let targetScore = 20;
-    let timeLeft = 30;
-    let timer = null;
-    let spawner = null;
-    let gameActive = false;
-
 
     function startGame() {
         score = 0;
@@ -94,12 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
         gameOverScreen.style.display = 'block';
     }
 
-    // These must go AFTER the buttons are defined above, and before the file ends:
     if (restartButton) {
         restartButton.addEventListener('click', startGame);
     }
     if (playAgainButton) {
         playAgainButton.addEventListener('click', startGame);
     }
-  
-}); // <--- This closes the DOMContentLoaded wrapper at the very bottom
+});
