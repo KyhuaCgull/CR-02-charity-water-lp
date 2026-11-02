@@ -6,7 +6,7 @@
     <title>Water Quest - charity: water Game</title>
     <!-- Google Fonts: Montserrat for charity: water branding -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
     </header>
 
     <main>
-        <!-- Setup Screen -->
+        <!-- Setup Screen (Visible by default) -->
         <div id="setup-screen" class="screen">
             <h2>Select Difficulty</h2>
             <div class="difficulty-buttons">
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <!-- Game Screen -->
+        <!-- Game Screen (Hidden until difficulty is selected) -->
         <div id="game-screen" class="screen hidden">
             <div id="stats-bar">
                 <div class="stat">Score: <span id="score">0</span> / <span id="target-score">20</span></div>
@@ -42,7 +42,7 @@
             <button id="reset-btn" class="secondary-btn">Restart Game</button>
         </div>
 
-        <!-- Game Over / Victory Screen -->
+        <!-- Game Over / Victory Screen (Hidden until the game ends) -->
         <div id="game-over-screen" class="screen hidden">
             <h2 id="game-over-title">Game Over</h2>
             <p id="game-over-message">You did great!</p>
