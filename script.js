@@ -23,8 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Difficulty clicked:", e.target.textContent);
             targetScore = parseInt(e.target.dataset.goal) || 20;
             if (levelDisplay) levelDisplay.textContent = e.target.textContent;
-            if (setupScreen) setupScreen.classList.add('hidden');
-            if (gameScreen) gameScreen.classList.remove('hidden');
+            
+            // Directly hide the setup screen and show the game screen
+            const setupDiv = document.getElementById('setup-screen');
+            const gameDiv = document.getElementById('game-screen');
+            if (setupDiv) setupDiv.style.display = 'none';
+            if (gameDiv) gameDiv.classList.remove('hidden');
+            
             startGame();
         });
     });
