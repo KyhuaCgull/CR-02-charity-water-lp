@@ -88,6 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gameOverScreen.style.display = 'block';
     }
 
-    restartButton.addEventListener('click', startGame);
-    playAgainButton.addEventListener('click', startGame);
-});
+    // These must go AFTER the buttons are defined above, and before the file ends:
+    if (restartButton) {
+        restartButton.addEventListener('click', startGame);
+    }
+    if (playAgainButton) {
+        playAgainButton.addEventListener('click', startGame);
+    }
+}); // <--- This closes the DOMContentLoaded wrapper at the very bottom
