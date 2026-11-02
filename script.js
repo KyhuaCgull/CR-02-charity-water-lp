@@ -95,4 +95,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (playAgainButton) {
         playAgainButton.addEventListener('click', startGame);
     }
+  
 }); // <--- This closes the DOMContentLoaded wrapper at the very bottom
