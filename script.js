@@ -1,14 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     const difficultyButtons = document.querySelectorAll('.difficulty-btn');
     const scoreDisplay = document.getElementById('score');
-    const timeDisplay = document.getElementById('timer');                // Matches your HTML ID 'timer'
-    const levelDisplay = document.getElementById('current-diff-label');    // Matches your HTML ID 'current-diff-label'
-    const restartButton = document.getElementById('reset-btn');            // Matches your HTML ID 'reset-btn'
+    const timeDisplay = document.getElementById('timer');
+    const levelDisplay = document.getElementById('current-diff-label');
+    const restartButton = document.getElementById('reset-btn');
     const playAgainButton = document.getElementById('play-again-btn');
-    const gameArea = document.getElementById('game-board');                // Matches your HTML ID 'game-board'
-    const gameOverScreen = document.getElementById('game-over-screen');    // Matches your HTML ID 'game-over-screen'
+    const gameArea = document.getElementById('game-board');
+    const gameOverScreen = document.getElementById('game-over-screen');
     const finalScoreDisplay = document.getElementById('final-score');
-  
+    const setupScreen = document.getElementById('setup-screen');
+    const gameScreen = document.getElementById('game-screen');
+
+    difficultyButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log("Difficulty clicked:", e.target.textContent);
+            targetScore = parseInt(e.target.dataset.goal) || 20;
+            if (levelDisplay) levelDisplay.textContent = e.target.textContent;
+            if (setupScreen) setupScreen.classList.add('hidden');
+            if (gameScreen) gameScreen.classList.remove('hidden');
+            startGame();
+        });
+    });
+});
 
     let score = 0;
     let targetScore = 20;
@@ -17,14 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let spawner = null;
     let gameActive = false;
 
-    difficultyButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const goal = parseInt(e.target.dataset.goal);
-        targetScore = goal;
-        levelDisplay.textContent = e.target.textContent;
-        startGame();
-    });
-});
 
     function startGame() {
         score = 0;
